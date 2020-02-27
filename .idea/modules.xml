@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/authenticationService/authenticationService.iml" filepath="$PROJECT_DIR$/authenticationService/authenticationService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/favoriteGiphy.iml" filepath="$PROJECT_DIR$/.idea/favoriteGiphy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userProfileService/userProfileService.iml" filepath="$PROJECT_DIR$/userProfileService/userProfileService.iml" />
     </modules>
   </component>
 </project>
