@@ -1,0 +1,9 @@
+
+  <input class="input" type="text" name="searchTerm" [(ngModel)]="searchTerm" placeholder="GIPHY Search Description">
+  <button (click)="giphySearch()">Search</button>
+  <app-giphy-item
+    *ngFor="let giphy of giphies"
+    [giphy]="giphy"
+    >
+  </app-giphy-item>
+
