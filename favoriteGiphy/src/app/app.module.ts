@@ -10,6 +10,8 @@ import { GiphyItemComponent } from './component/giphy-item/giphy-item.component'
 import { HeaderComponent } from './component/layout/header/header.component';
 import { AboutComponent } from './component/pages/about/about.component';
 import { ProfileComponent } from './component/pages/profile/profile.component';
+import { LoginComponent } from './component/pages/login/login.component';
+import { RegisterComponent } from './component/pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProfileComponent } from './component/pages/profile/profile.component';
     GiphyItemComponent,
     HeaderComponent,
     AboutComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
