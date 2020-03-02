@@ -2,8 +2,8 @@ package com.monkeybeat.loginservice.jwt;
 
 import com.monkeybeat.loginservice.responseDTO.NetworkResponseDTO;
 import com.monkeybeat.loginservice.utils.NetworkUtils;
-import com.sun.org.apache.xml.internal.security.algorithms.SignatureAlgorithm;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;

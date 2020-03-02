@@ -12,7 +12,10 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+
+  // Anything else will redirect to home page.
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({

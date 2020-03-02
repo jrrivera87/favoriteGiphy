@@ -1,16 +1,18 @@
-package com.monkeybeat.adminservice.model;
+package com.monkeybeat.userservice.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Table(name = "user")
 @Entity
 public class User implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(name = "username")
     private String username;
@@ -36,11 +38,20 @@ public class User implements Serializable {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
 
-    public Long getId() {
+    public User() { }
+
+    public User(String username, String fullName, String password, String emailAddress){
+        this.username = username;
+        this.fullName = fullName;
+        this.password = password;
+        this.emailAddress = emailAddress;
+    }
+
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
