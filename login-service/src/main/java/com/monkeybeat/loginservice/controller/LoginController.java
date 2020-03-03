@@ -18,6 +18,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
+    // TODO need to finish flushing out the login services. The Service will be used to validate the login and pass a security Token.
     @GetMapping("/test")
     public String test() {
         return "test done";

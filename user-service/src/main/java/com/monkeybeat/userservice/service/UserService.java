@@ -1,14 +1,16 @@
 package com.monkeybeat.userservice.service;
 
-import com.monkeybeat.userservice.model.User;
+import com.monkeybeat.userservice.dto.UserDTO;
 
 import java.util.UUID;
 
 public interface UserService {
 
-    User retrieveUser(UUID id);
+    UserDTO retrieveUser(UUID id);
 
-    void createUser(User user);
+    void createUser(UserDTO user);
 
-    void deleteUser(long id);
+    void deleteUser(UUID id);
+
+    void updateUser(UserDTO user);
 }

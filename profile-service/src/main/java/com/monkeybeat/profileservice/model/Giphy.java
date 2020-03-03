@@ -1,26 +1,26 @@
 package com.monkeybeat.profileservice.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
+@Table(name = "giphy")
+@Entity
 public class Giphy implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private UUID giphyId;
+
     private String type;
+
     private String id;
+
     private String url;
-  'import_datetime': string;
-  'trending_datetime': string;
-    images: {
-        original: {
-            frames: string;
-            hash: string;
-            height: string;
-            mp4: string;
-            mp4_size: string;
-            size: string;
-            url: string;
-            webp: string;
-            webp_size: string;
-            width: string;
-        }
-    };
+
+    private String importDatetime;
+
+    private String trendingDatetime;
+
+    private Images images;
 }

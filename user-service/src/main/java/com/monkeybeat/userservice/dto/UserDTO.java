@@ -1,51 +1,39 @@
-package com.monkeybeat.userservice.model;
+package com.monkeybeat.userservice.dto;
 
-import java.io.Serializable;
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
-@Table(name = "user")
-@Entity
-public class User implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserDTO {
     private UUID id;
 
-    @Column(name = "username")
     private String username;
 
-    @Column(name = "fullname")
     private String fullName;
 
-    @Column(name = "password")
     private String password;
 
-    @Column(name = "email_address", length = 200)
     private String emailAddress;
 
-    @Column(name = "profile_id")
     private Long profileId;
 
-    @Column(name = "status")
     private Character status;
 
-    @Column(name = "login_attempt")
     private Integer loginAttempt;
 
-    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
 
-    public User() { }
-
-    public User(String username, String fullName, String password, String emailAddress){
+    public UserDTO(UUID id, String username, String fullName, String password,
+                   String emailAddress, Long profileId, Character status, Integer loginAttempt, List<String> roles) {
+        this.id = id;
         this.username = username;
         this.fullName = fullName;
         this.password = password;
         this.emailAddress = emailAddress;
+        this.profileId = profileId;
+        this.status = status;
+        this.loginAttempt = loginAttempt;
+        this.roles = roles;
     }
 
     public UUID getId() {
@@ -118,20 +106,5 @@ public class User implements Serializable {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return id.equals(user.id) &&
-                username.equals(user.username) &&
-                fullName.equals(user.fullName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, username, fullName);
     }
 }

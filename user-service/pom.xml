@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.monkeybeat</groupId>
-	<artifactId>admin-service</artifactId>
+	<artifactId>user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>admin-service</name>
+	<name>user-service</name>
 	<description>Authentication server</description>
 
 	<properties>

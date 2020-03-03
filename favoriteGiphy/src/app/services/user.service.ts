@@ -13,17 +13,18 @@ const httpOptions = {
 })
 export class UserService {
 
+  // TODO need to come in and invoke user service created by microService.
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get<User[]>(`/users`);
+  getUser(id) {
+    return this.http.get<User[]>(`/userService/user/${id}`);
   }
 
   register(user: User) {
-    return this.http.post(`/users/register`, user);
+    return this.http.put(`/userService/user`, user);
   }
 
   delete(id: number) {
-    return this.http.delete(`/users/${id}`);
+    return this.http.delete(`/userService/user/${id}`);
   }
 }
