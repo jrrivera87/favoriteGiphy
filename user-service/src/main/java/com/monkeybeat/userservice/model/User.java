@@ -39,6 +39,8 @@ public class User implements Serializable {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
 
+    public User() { }
+
     public User(String username, String fullName, String password, String emailAddress){
         this.username = username;
         this.fullName = fullName;
