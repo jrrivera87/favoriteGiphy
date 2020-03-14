@@ -32,6 +32,4 @@ public class UserController {
     public void deleteUser(UUID id){
         userService.deleteUser(id);
     }
-
-//    TODO need to finish validating once DB connection is set up to validate service.
 }

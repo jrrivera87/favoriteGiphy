@@ -12,7 +12,7 @@ import java.util.UUID;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column(name = "username")
@@ -28,7 +28,7 @@ public class User implements Serializable {
     private String emailAddress;
 
     @Column(name = "profile_id")
-    private Long profileId;
+    private UUID profileId;
 
     @Column(name = "status")
     private Character status;
@@ -38,8 +38,6 @@ public class User implements Serializable {
 
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
-
-    public User() { }
 
     public User(String username, String fullName, String password, String emailAddress){
         this.username = username;
@@ -88,11 +86,11 @@ public class User implements Serializable {
         this.emailAddress = emailAddress;
     }
 
-    public Long getProfileId() {
+    public UUID getProfileId() {
         return profileId;
     }
 
-    public void setProfileId(Long profileId) {
+    public void setProfileId(UUID profileId) {
         this.profileId = profileId;
     }
 

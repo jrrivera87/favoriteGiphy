@@ -2,9 +2,9 @@ package com.monkeybeat.userservice.converter;
 
 import com.monkeybeat.userservice.dto.UserDTO;
 import com.monkeybeat.userservice.model.User;
+import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
+@Service
 public class UserConverter {
     public UserDTO entityToDTO(User user){
         UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getFullName(), user.getPassword(),

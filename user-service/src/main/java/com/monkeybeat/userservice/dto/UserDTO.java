@@ -15,7 +15,7 @@ public class UserDTO {
 
     private String emailAddress;
 
-    private Long profileId;
+    private UUID profileId;
 
     private Character status;
 
@@ -23,8 +23,10 @@ public class UserDTO {
 
     private List<String> roles = new ArrayList<>();
 
+    public UserDTO() {}
+
     public UserDTO(UUID id, String username, String fullName, String password,
-                   String emailAddress, Long profileId, Character status, Integer loginAttempt, List<String> roles) {
+                   String emailAddress, UUID profileId, Character status, Integer loginAttempt, List<String> roles) {
         this.id = id;
         this.username = username;
         this.fullName = fullName;
@@ -76,11 +78,11 @@ public class UserDTO {
         this.emailAddress = emailAddress;
     }
 
-    public Long getProfileId() {
+    public UUID getProfileId() {
         return profileId;
     }
 
-    public void setProfileId(Long profileId) {
+    public void setProfileId(UUID profileId) {
         this.profileId = profileId;
     }
 
